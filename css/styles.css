@@ -1,0 +1,21 @@
+:root {
+    --primary: #0f1626;
+    --secondary: #1a73e8;
+    --accent: #ff4d4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--primary);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Add all the CSS styles from the original file here */
+/* ... rest of the CSS rules ... */
