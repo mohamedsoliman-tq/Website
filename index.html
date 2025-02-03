@@ -1,8 +1,217 @@
-<!DOCTYPE>
-<html>
-  <title>El Meshatshat</title>
-  <body>
-    <p>I am ElMeshatshat</p>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCrypt - Red Team & Cryptography</title>
+    <style>
+        :root {
+            --primary: #0f1626;
+            --secondary: #1a73e8;
+            --accent: #ff4d4d;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        nav {
+            background: rgba(15, 22, 38, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px var(--secondary);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(45deg, var(--primary), #000);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: #0d1117;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid var(--secondary);
+        }
+
+        .projects {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #0d1117;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: #0d1117;
+            border: 1px solid var(--secondary);
+            color: #fff;
+        }
+
+        button {
+            background: var(--secondary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #1557b0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>RED TEAMER & CRYPTOGRAPHER</h1>
+            <p>Breaking systems to build better defenses</p>
+        </div>
+    </div>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Offensive security specialist with a passion for cryptography and secure system design. I specialize in penetration testing, cryptographic implementations, and red team operations.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Cryptography</h3>
+                    <p>RSA, AES, ECC, PKI, Hash Functions</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Red Teaming</h3>
+                    <p>Network Pentesting, Social Engineering, C2 Infrastructure</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <p>Burp Suite, Metasploit, Wireshark, Ghidra, John the Ripper</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Recent Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Custom Cryptosystem Analysis</h3>
+                    <p>Reverse-engineered and broke 3 custom enterprise cryptosystems</p>
+                </div>
+                <div class="project-card">
+                    <h3>Red Team Toolkit</h3>
+                    <p>Developed custom C2 framework with ECC encrypted communications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Encrypted Message" rows="5" required></textarea>
+                <button type="submit">Send Secure Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 CyberCrypt. All rights reserved.</p>
+    </footer>
+</body>
+</html>
