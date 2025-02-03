@@ -1,7 +1,8 @@
 :root {
-    --primary: #0f1626;
-    --secondary: #1a73e8;
-    --accent: #ff4d4d;
+    --primary-black: #000000;
+    --neon-green: #00ff00;
+    --dark-green: #008000;
+    --deep-green: #00cc00;
 }
 
 * {
@@ -9,12 +10,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Mono', monospace;
+    scrollbar-color: var(--neon-green) var(--primary-black);
+    scrollbar-width: thin;
 }
 
 body {
-    background-color: var(--primary);
-    color: #ffffff;
+    background-color: var(--primary-black);
+    color: var(--neon-green);
     line-height: 1.6;
+    letter-spacing: 0.5px;
 }
 
 .container {
@@ -23,12 +27,13 @@ body {
     padding: 2rem;
 }
 
+/* Navigation */
 nav {
-    background: rgba(15, 22, 38, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     padding: 1rem;
     position: sticky;
     top: 0;
-    border-bottom: 2px solid var(--secondary);
+    border-bottom: 2px solid var(--neon-green);
     z-index: 100;
 }
 
@@ -39,39 +44,43 @@ nav ul {
 }
 
 nav a {
-    color: #fff;
+    color: var(--neon-green);
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: all 0.3s;
 }
 
 nav a:hover {
-    color: var(--secondary);
-    text-shadow: 0 0 10px var(--secondary);
+    color: var(--deep-green);
+    text-shadow: 0 0 10px var(--neon-green);
 }
 
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 4rem 0;
-    background: linear-gradient(45deg, var(--primary), #000);
+    background: linear-gradient(45deg, var(--primary-black), #001100);
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--neon-green);
+    text-shadow: 0 0 15px var(--neon-green);
 }
 
 .hero p {
-    color: var(--secondary);
+    color: var(--dark-green);
     font-size: 1.2rem;
 }
 
+/* Sections */
 .section {
     padding: 4rem 0;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid #001a00;
 }
 
+/* Skills Grid */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -80,12 +89,19 @@ nav a:hover {
 }
 
 .skill-card {
-    background: #0d1117;
+    background: #000a00;
     padding: 1.5rem;
     border-radius: 5px;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--neon-green);
+    transition: transform 0.3s ease;
 }
 
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+/* Projects */
 .projects {
     display: grid;
     gap: 2rem;
@@ -93,13 +109,18 @@ nav a:hover {
 }
 
 .project-card {
-    background: #0d1117;
+    background: #000a00;
     padding: 1.5rem;
-    border-left: 4px solid var(--secondary);
+    border-left: 4px solid var(--neon-green);
+    transition: all 0.3s ease;
 }
 
-/* New Blog Styles */
-/* Blog Styles */
+.project-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+/* Blog Section */
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -108,30 +129,31 @@ nav a:hover {
 }
 
 .blog-card {
-    background: #0d1117;
+    background: #000a00;
     padding: 1.5rem;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--neon-green);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
 .blog-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(26, 115, 232, 0.2);
+    box-shadow: 0 0 20px var(--neon-green);
 }
 
 .blog-card h3 {
-    color: var(--secondary);
+    color: var(--neon-green);
     margin-bottom: 0.5rem;
 }
 
 .blog-date {
     display: block;
-    color: #888;
+    color: var(--dark-green);
     font-size: 0.8rem;
     margin-top: 0.5rem;
 }
+
+/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 2rem auto;
@@ -141,14 +163,21 @@ input, textarea {
     width: 100%;
     padding: 0.8rem;
     margin: 0.5rem 0;
-    background: #0d1117;
-    border: 1px solid var(--secondary);
-    color: #fff;
+    background: #000a00;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    transition: all 0.3s ease;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
 button {
-    background: var(--secondary);
-    color: #fff;
+    background: var(--neon-green);
+    color: var(--primary-black);
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
@@ -156,16 +185,18 @@ button {
 }
 
 button:hover {
-    background: #1557b0;
+    background: var(--dark-green);
+    box-shadow: 0 0 15px var(--neon-green);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    color: var(--secondary);
+    color: var(--neon-green);
 }
 
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
