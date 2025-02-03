@@ -99,6 +99,7 @@ nav a:hover {
 }
 
 /* New Blog Styles */
+/* Blog Styles */
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -109,12 +110,15 @@ nav a:hover {
 .blog-card {
     background: #0d1117;
     padding: 1.5rem;
-    border-left: 4px solid var(--accent);
-    transition: transform 0.3s ease;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .blog-card:hover {
-    transform: translateX(10px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(26, 115, 232, 0.2);
 }
 
 .blog-card h3 {
@@ -128,7 +132,6 @@ nav a:hover {
     font-size: 0.8rem;
     margin-top: 0.5rem;
 }
-
 .contact-form {
     max-width: 600px;
     margin: 2rem auto;
