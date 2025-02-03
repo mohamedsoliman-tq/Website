@@ -1,0 +1,37 @@
+nav {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid var(--green-accent);
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav a {
+    color: var(--green-accent);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: var(--dark-green);
+    text-shadow: 0 0 10px var(--green-accent);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+}
