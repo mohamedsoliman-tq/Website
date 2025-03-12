@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picoCTF Blogs | T4QI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/ficon.png">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/sections.css">
+    <link rel="stylesheet" href="/css/utilities.css">
+    <link rel="stylesheet" href="/css/platforms.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>picoCTF CHALLENGES</h1>
+            <p>Writeups and solutions for various picoCTF challenges</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All</button>
+                <button class="category-tab" data-category="web">Web Exploitation</button>
+                <button class="category-tab" data-category="crypto">Cryptography</button>
+                <button class="category-tab" data-category="forensics">Forensics</button>
+                <button class="category-tab" data-category="binary">Binary Exploitation</button>
+                <button class="category-tab" data-category="reverse">Reverse Engineering</button>
+            </div>
+            
+            <div class="blog-posts">
+                <!-- Web Exploitation Challenges -->
+                <div class="blog-card" data-category="web">
+                    <h3>WebDecode</h3>
+                    <p>Learning how to use the web inspector to find and decode hidden data.</p>
+                    <span class="blog-date">2025-03-12</span>
+                    <span class="blog-difficulty">Difficulty: Easy</span>
+                    <a href="/blogs/picoctf/webdecode.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <!-- Cryptography Challenges -->
+                <div class="blog-card" data-category="crypto">
+                    <h3>Mind your Ps and Qs</h3>
+                    <p>Breaking weak RSA encryption by factoring small primes.</p>
+                    <span class="blog-date">2024-01-05</span>
+                    <span class="blog-difficulty">Difficulty: Medium</span>
+                    <a href="/blogs/picoctf/mind-your-ps-and-qs.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <div class="blog-card" data-category="crypto">
+                    <h3>New Caesar</h3>
+                    <p>Reversing a custom Caesar cipher implementation to decode the flag.</p>
+                    <span class="blog-date">2024-01-17</span>
+                    <span class="blog-difficulty">Difficulty: Medium</span>
+                    <a href="/blogs/picoctf/new-caesar.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <!-- Forensics Challenges -->
+                <div class="blog-card" data-category="forensics">
+                    <h3>Matryoshka doll</h3>
+                    <p>Extracting hidden data from nested archives using forensic techniques.</p>
+                    <span class="blog-date">2023-12-07</span>
+                    <span class="blog-difficulty">Difficulty: Medium</span>
+                    <a href="/blogs/picoctf/matryoshka-doll.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <div class="blog-card" data-category="forensics">
+                    <h3>Wireshark doo dooo do doo</h3>
+                    <p>Network packet analysis to find hidden communications.</p>
+                    <span class="blog-date">2024-02-02</span>
+                    <span class="blog-difficulty">Difficulty: Easy</span>
+                    <a href="/blogs/picoctf/wireshark.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <!-- Binary Exploitation Challenges -->
+                <div class="blog-card" data-category="binary">
+                    <h3>Buffer Overflow 0</h3>
+                    <p>Exploiting a simple buffer overflow vulnerability to gain control flow.</p>
+                    <span class="blog-date">2024-01-28</span>
+                    <span class="blog-difficulty">Difficulty: Easy</span>
+                    <a href="/blogs/picoctf/buffer-overflow-0.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <div class="blog-card" data-category="binary">
+                    <h3>ROP Chain</h3>
+                    <p>Building a return-oriented programming chain to bypass security mechanisms.</p>
+                    <span class="blog-date">2024-02-15</span>
+                    <span class="blog-difficulty">Difficulty: Hard</span>
+                    <a href="/blogs/picoctf/rop-chain.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <!-- Reverse Engineering Challenges -->
+                <div class="blog-card" data-category="reverse">
+                    <h3>vault-door-1</h3>
+                    <p>Analyzing Java code to discover the password checking mechanism.</p>
+                    <span class="blog-date">2023-10-18</span>
+                    <span class="blog-difficulty">Difficulty: Easy</span>
+                    <a href="/blogs/picoctf/vault-door-1.html" class="read-more">Read Writeup</a>
+                </div>
+                
+                <div class="blog-card" data-category="reverse">
+                    <h3>keygenme-py</h3>
+                    <p>Reverse engineering a Python key generator to create a valid license key.</p>
+                    <span class="blog-date">2024-02-28</span>
+                    <span class="blog-difficulty">Difficulty: Medium</span>
+                    <a href="/blogs/picoctf/keygenme-py.html" class="read-more">Read Writeup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 T4QI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Get selected category
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

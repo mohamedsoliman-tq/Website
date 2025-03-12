@@ -1,0 +1,65 @@
+/* Platform grid layout */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Platform card styling */
+.platform-card {
+    background: #000a00;
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--green-accent);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+.platform-card h3 {
+    color: var(--green-accent);
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+.platform-card p {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Glow effect */
+.platform-glow {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: var(--green-accent);
+    filter: blur(20px);
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.platform-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--green-accent);
+}
+
+.platform-card:hover .platform-glow {
+    opacity: 0.5;
+    bottom: -30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+}

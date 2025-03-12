@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDecode Challenge | T4QI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/ficon.png">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/sections.css">
+    <link rel="stylesheet" href="/css/utilities.css">
+    <style>
+        /* Keep your existing custom styles here */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--green-accent);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 0 0 15px var(--green-accent);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: var(--dark-green);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Code blocks */
+        pre {
+            background: #000a00;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid var(--green-accent);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            color: var(--green-accent);
+        }
+
+        /* List styling */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-green);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            border: 1px solid var(--green-accent);
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        /* Horizontal rule */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: var(--green-accent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add site navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Add hero section -->
+    <div class="hero">
+        <div class="container">
+            <h1>WebDecode</h1>
+            <p>picoCTF Challenge Write-Up</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section" id="webdecode---write-up">
+            <h2>WebDecode - Write-Up</h2>
+
+            <p><strong>Date:</strong> 12/03/2025 </p>
+            <p><strong>Challenge Category:</strong> #Web-Security </p>
+            <p>Platform: #picoCTF</p>
+            <p><strong>Difficulty:</strong> #Easy </p>
+            <p><strong>Status:</strong> #Solved</p>
+
+            <hr>
+        </div>
+        <div class="section" id="problem-description">
+            <h2>Problem Description</h2>
+
+            <p>*Do you know how to use the web inspector?</p>
+            <p>Start searching <a href="http://titan.picoctf.net:51021/" class="read-more">here</a> to find the flag</p>
+
+            <p>- <strong>Target:</strong> http://titan.picoctf.net:51021/</p>
+            <p>- <strong>Goal:</strong> extract a flag</p>
+            <p>- <strong>Initial Observations:</strong> The name of the challenge is webdecode it might include a base64
+            </p>
+
+            <hr>
+        </div>
+        <div class="section" id="tools-used">
+            <h2>Tools Used</h2>
+
+            <p>- Web inspector</p>
+            <p>- https://www.base64decode.org/</p>
+
+            <hr>
+        </div>
+        <div class="section" id="solution-steps">
+            <h2>Solution Steps</h2>
+
+            <ol>
+                <li><strong>Viewing the source code of the web pages</strong></li>
+            </ol>
+            <p>The Home and Contact pages didn't have much But the The About page had something interesting an encoded
+            string ![[Pasted image 20250312141202.png]]</p>
+
+            <ol start="2">
+                <li><strong>Decoding the base64</strong></li>
+            </ol>
+            <p>Simply enter the string and get the flag</p>
+            <hr>
+        </div>
+        
+        <!-- Add Back to Challenges link -->
+        <div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        
+        <footer>
+            <p>© 2025 T4QI. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

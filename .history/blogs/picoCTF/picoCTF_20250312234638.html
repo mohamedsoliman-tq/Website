@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picoCTF Blogs | T4QI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/ficon.png">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/sections.css">
+    <link rel="stylesheet" href="/css/utilities.css">
+    <link rel="stylesheet" href="/css/platforms.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>picoCTF CHALLENGES</h1>
+            <p>Writeups and solutions for various picoCTF challenges</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All</button>
+                <button class="category-tab" data-category="web">Web Exploitation</button>
+                <button class="category-tab" data-category="crypto">Cryptography</button>
+                <button class="category-tab" data-category="forensics">Forensics</button>
+                <button class="category-tab" data-category="binary">Binary Exploitation</button>
+                <button class="category-tab" data-category="reverse">Reverse Engineering</button>
+            </div>
+            
+            <div class="blog-posts">
+                <!-- Web Exploitation Challenges -->
+                <div class="blog-card" data-category="web">
+                    <h3>WebDecode</h3>
+                    <p>Learning how to use the web inspector to find and decode hidden data.</p>
+                    <span class="blog-date">2025-03-12</span>
+                    <span class="blog-difficulty">Difficulty: Easy</span>
+                    <a href="/blogs/picoC/" class="read-more">Read Writeup</a>
+                </div>
+                
+                <!-- Cryptography Challenges -->
+                
+                
+                <!-- Forensics Challenges -->
+                
+                
+                <!-- Binary Exploitation Challenges -->
+                
+                
+                <!-- Reverse Engineering Challenges -->
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 T4QI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Get selected category
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

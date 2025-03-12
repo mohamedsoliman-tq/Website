@@ -303,13 +303,6 @@ def convert_markdown_to_html(markdown_text):
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Projects.html">Projects</a></li>
-            <li><a href="/Blogs.html">Blog</a></li>
-        </ul>
-    </nav>
     <div class="container">
 {html}
         <footer>
