@@ -88,12 +88,7 @@
                                 document.getElementById('hiddenAdminForm').submit(); 
                             } 
                             else { 
-                                document.getElementById('msg').innerHTML = "Log In Failed"; 
-                            } 
-                        } 
-                        else { 
-                            document.getElementById('msg').innerHTML = "Illegal character in username or password." 
-                        }
+                                document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }
                 </li>
                 <li><strong>Inspecting the code</strong> By the credentials that I have submitted I got
                     <code>Log In Failed</code> so the checkPassword function is what causes this but from where

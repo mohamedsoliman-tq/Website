@@ -178,24 +178,5 @@
         padding: 2rem;
         color: var(--green-accent);
     }
-    .callout {
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 5px;
-        border-left: 4px solid #4b6bfb;
-        background-color: rgba(75, 107, 251, 0.1);
-    }
-    .callout-title {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-    .callout-note { border-left-color: #4b6bfb; background-color: rgba(75, 107, 251, 0.1); }
-    .callout-info { border-left-color: #0288d1; background-color: rgba(2, 136, 209, 0.1); }
-    .callout-warning { border-left-color: #ffa726; background-color: rgba(255, 167, 38, 0.1); }
-    .callout-danger { border-left-color: #ef5350; background-color: rgba(239, 83, 80, 0.1); }
-    .callout-success { border-left-color: #66bb6a; background-color: rgba(102, 187, 106, 0.1); }
-    .internal-link { color: #7c3aed; text-decoration: none; border-bottom: 1px dotted; }
-    .internal-link:hover { text-decoration: underline; }
-    mark { background-color: #fff176; padding: 0 2px; }
-    .markdown-image { max-width: 100%; height: auto; display: block; margin: 1rem 0; }
+    
     

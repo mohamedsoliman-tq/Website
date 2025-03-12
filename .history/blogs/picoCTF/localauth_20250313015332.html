@@ -57,43 +57,13 @@
 
             <ol>
                 <li><strong>Let's random data then see what we get</strong> I tried <code>ssss, 1234</code> and got
-                    <code>Log In Failed</code><br><img src="pics/la1.png" alt="la1.png">
+                    <code>Log In Failed</code><img src="pics/la1.png" alt="la1.png">
                 </li>
                 <li><strong>Let's see the request in Burp Suite and learn how the credentials is dealt with</strong>
                     Intercept the request then pass it to the repeater. You can see one Java script file called
-                    <code>secure.js</code><br> <img src="pics/la2.png" alt="la2.png"> <br>and the script that checks the
+                    <code>secure.js</code> <img src="pics/la2.png" alt="la2.png"> and the script that checks the
                     username and password and validates the credentials
-                    <pre><code>function filter(string) {
-                        filterPassed = true; 
-                        for (let i =0; i < string.length; i++){ 
-                            cc = string.charCodeAt(i); 
-                            if ( (cc >= 48 && cc <= 57) || (cc >= 65 && cc <= 90) || (cc >= 97 && cc <= 122) ) 
-                            { filterPassed = true;      
-                            } 
-                            else { 
-                                return false; 
-                            } 
-                            } 
-                            return true; 
-                        } 
-                        window.username = "ssss"; 
-                        window.password = "1234"; 
-                        usernameFilterPassed = filter(window.username); 
-                        passwordFilterPassed = filter(window.password); 
-                        if ( usernameFilterPassed && passwordFilterPassed ) { 
-                            loggedIn = checkPassword(window.username, window.password); 
-                            if(loggedIn) { 
-                                document.getElementById('msg').innerHTML = "Log In Successful"; 
-                                document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; 
-                                document.getElementById('hiddenAdminForm').submit(); 
-                            } 
-                            else { 
-                                document.getElementById('msg').innerHTML = "Log In Failed"; 
-                            } 
-                        } 
-                        else { 
-                            document.getElementById('msg').innerHTML = "Illegal character in username or password." 
-                        }
+                    <pre><code>js     function filter(string) { filterPassed = true; for (let i =0; i < string.length; i++){ cc = string.charCodeAt(i); if ( (cc >= 48 && cc <= 57) || (cc >= 65 && cc <= 90) || (cc >= 97 && cc <= 122) ) { filterPassed = true;      } else { return false; } } return true; } window.username = "ssss"; window.password = "1234"; usernameFilterPassed = filter(window.username); passwordFilterPassed = filter(window.password); if ( usernameFilterPassed && passwordFilterPassed ) { loggedIn = checkPassword(window.username, window.password); if(loggedIn) { document.getElementById('msg').innerHTML = "Log In Successful"; document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; document.getElementById('hiddenAdminForm').submit(); } else { document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }
                 </li>
                 <li><strong>Inspecting the code</strong> By the credentials that I have submitted I got
                     <code>Log In Failed</code> so the checkPassword function is what causes this but from where
@@ -106,7 +76,7 @@
                     Know let's try this
                 </li>
                 <li><strong>Getting the flag</strong> By submitting with the found credentials we get the flag.
-                    <br><img src="pics/la4.png" alt="Pasted image 20250312231319.png">
+                    <bl></<img src="pics/la4.png" alt="Pasted image 20250312231319.png">
                     <hr>
                 </li>
 </ol></code></pre>

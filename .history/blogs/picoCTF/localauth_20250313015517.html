@@ -76,24 +76,7 @@
                             } 
                             return true; 
                         } 
-                        window.username = "ssss"; 
-                        window.password = "1234"; 
-                        usernameFilterPassed = filter(window.username); 
-                        passwordFilterPassed = filter(window.password); 
-                        if ( usernameFilterPassed && passwordFilterPassed ) { 
-                            loggedIn = checkPassword(window.username, window.password); 
-                            if(loggedIn) { 
-                                document.getElementById('msg').innerHTML = "Log In Successful"; 
-                                document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; 
-                                document.getElementById('hiddenAdminForm').submit(); 
-                            } 
-                            else { 
-                                document.getElementById('msg').innerHTML = "Log In Failed"; 
-                            } 
-                        } 
-                        else { 
-                            document.getElementById('msg').innerHTML = "Illegal character in username or password." 
-                        }
+                        window.username = "ssss"; window.password = "1234"; usernameFilterPassed = filter(window.username); passwordFilterPassed = filter(window.password); if ( usernameFilterPassed && passwordFilterPassed ) { loggedIn = checkPassword(window.username, window.password); if(loggedIn) { document.getElementById('msg').innerHTML = "Log In Successful"; document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; document.getElementById('hiddenAdminForm').submit(); } else { document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }
                 </li>
                 <li><strong>Inspecting the code</strong> By the credentials that I have submitted I got
                     <code>Log In Failed</code> so the checkPassword function is what causes this but from where
