@@ -63,22 +63,28 @@
                     Intercept the request then pass it to the repeater. You can see one Java script file called
                     <code>secure.js</code> <img src="pics/la2.png" alt="la2.png"> and the script that checks the
                     username and password and validates the credentials
-                    <pre><code>js     function filter(string) { filterPassed = true; for (let i =0; i < string.length; i++){ cc = string.charCodeAt(i); if ( (cc >= 48 && cc <= 57) || (cc >= 65 && cc <= 90) || (cc >= 97 && cc <= 122) ) { filterPassed = true;      } else { return false; } } return true; } window.username = "ssss"; window.password = "1234"; usernameFilterPassed = filter(window.username); passwordFilterPassed = filter(window.password); if ( usernameFilterPassed && passwordFilterPassed ) { loggedIn = checkPassword(window.username, window.password); if(loggedIn) { document.getElementById('msg').innerHTML = "Log In Successful"; document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; document.getElementById('hiddenAdminForm').submit(); } else { document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }
-                </li>
-                <li><strong>Inspecting the code</strong> By the credentials that I have submitted I got
-                    <code>Log In Failed</code> so the checkPassword function is what causes this but from where
-                    does this function come? let's check the <code>secure.js</code> file.
-                </li>
-                <li><strong>Inspecting the js file</strong> First of all how could I see this file let's try to
-                    use the web inspect then see the sources tab that contain the files of the website. Here we
-                    go <img src="pics/la3.png" alt="Pasted image 20250312230932.png">
-                    Know let's try this
-                </li>
-                <li><strong>Getting the flag</strong> By submitting with the found credentials we get the flag.
-                    <img src="pics/la4.png" alt="Pasted image 20250312231319.png">
-                    <hr>
-                </li>
+                    <pre><code>js     function filter(string) { filterPassed = true; for (let i =0; i < string.length; i++){ cc = string.charCodeAt(i); if ( (cc >= 48 && cc <= 57) || (cc >= 65 && cc <= 90) || (cc >= 97 && cc <= 122) ) { filterPassed = true;      } else { return false; } } return true; } window.username = "ssss"; window.password = "1234"; usernameFilterPassed = filter(window.username); passwordFilterPassed = filter(window.password); if ( usernameFilterPassed && passwordFilterPassed ) { loggedIn = checkPassword(window.username, window.password); if(loggedIn) { document.getElementById('msg').innerHTML = "Log In Successful"; document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; document.getElementById('hiddenAdminForm').submit(); } else { document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }</li>
 </ol></code></pre>
+
+                    <ol>
+                        <li><strong>Inspecting the code</strong> By the credentials that I have submitted I got
+                            <code>Log In Failed</code> so the checkPassword function is what causes this but from where
+                            does this function come? let's check the <code>secure.js</code> file.
+                        </li>
+                    </ol>
+                    <ol>
+                        <li><strong>Inspecting the js file</strong> First of all how could I see this file let's try to
+                            use the web inspect then see the sources tab that contain the files of the website. Here we
+                            go <img src="pics/la3.png" alt="Pasted image 20250312230932.png">
+                            Know let's try this
+                        </li>
+                    </ol>
+                    <ol>
+                        <li><strong>Getting the flag</strong> By submitting with the found credentials we get the flag.
+                            <img src="pics/la4.png" alt="Pasted image 20250312231319.png">
+                            <hr>
+                        </li>
+                    </ol>
         </div>
         <div class="section">
             <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
