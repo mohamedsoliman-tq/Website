@@ -154,9 +154,7 @@ def convert_markdown_to_html(markdown_text,filename=None):
     </nav>
     <div class="container">
 {html_text}
-<div class="section">
-            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
-        </div>
+
         <footer>
         <p>&copy; 2025 T4QI. All rights reserved.</p>
     </footer>

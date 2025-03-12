@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarklet</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="local-authority---write-up"><h1>Local Authority - Write-Up</h1>
+
+<p><strong>Date:</strong> 12/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security</p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy</p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Can you get the flag?</p>
+<p>Go to this <a href="http://saturn.picoctf.net:58822/" class="read-more">website</a> and see what you can discover.*</p>
+
+<p>- <strong>Target:</strong> http://saturn.picoctf.net:58822/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> A simple login page let's see what does it hide</p>
+
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Burp Suite</p>
+<p>- Web Inspect</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Let's random data then see what we get</strong>   I tried <code>ssss, 1234</code> and got <code>Log In Failed</code><img src="pics/la1.png" alt="la1.png"> </li>
+  <li><strong>Let's see the request in Burp Suite and learn how the credentials is dealt with</strong>   Intercept the request then pass it to the repeater. You can see one Java script file called <code>secure.js</code>  <img src="pics/la2.png" alt="la2.png">  and the script that checks the username and password and validates the credentials  <pre><code>js     function filter(string) { filterPassed = true; for (let i =0; i < string.length; i++){ cc = string.charCodeAt(i); if ( (cc >= 48 && cc <= 57) || (cc >= 65 && cc <= 90) || (cc >= 97 && cc <= 122) ) { filterPassed = true;      } else { return false; } } return true; } window.username = "ssss"; window.password = "1234"; usernameFilterPassed = filter(window.username); passwordFilterPassed = filter(window.password); if ( usernameFilterPassed && passwordFilterPassed ) { loggedIn = checkPassword(window.username, window.password); if(loggedIn) { document.getElementById('msg').innerHTML = "Log In Successful"; document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881"; document.getElementById('hiddenAdminForm').submit(); } else { document.getElementById('msg').innerHTML = "Log In Failed"; } } else { document.getElementById('msg').innerHTML = "Illegal character in username or password." }
+</li>
+</ol></code></pre>
+
+<ol>
+  <li><strong>Inspecting the code</strong>   By the credentials that I have submitted I got <code>Log In Failed</code> so the checkPassword function is what causes this but from where does this function come? let's check the <code>secure.js</code> file.
+</li>
+</ol><ol>
+  <li><strong>Inspecting the js file</strong> First of all how could I see this file let's try to use the web inspect then see the sources tab that contain the files of the website. Here we go  <img src="pics/Pasted image 20250312230932.png" alt="Pasted image 20250312230932.png"> Know let's try this 
+</li>
+</ol><ol>
+  <li><strong>Getting the flag</strong> By submitting with the found credentials we get the flag. <img src="pics/Pasted image 20250312231319.png" alt="Pasted image 20250312231319.png"> <hr>
+</li>
+</ol></div>
+<div class="section">
+    <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+</div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

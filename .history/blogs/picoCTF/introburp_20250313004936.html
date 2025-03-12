@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntroToBurp</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="introtoburp---write-up"><h1>IntroToBurp - Write-Up</h1>
+
+<p><strong>Date:</strong> 12/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security</p>
+<p>Platform: #picoCTF</p>
+<p><strong>Difficulty:</strong> #Easy</p>
+<p><strong>Status:</strong> #Solved</p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Try <a href="http://titan.picoctf.net:57038/" class="read-more">here</a> to find the flag</p>
+
+<p>- <strong>Target:</strong> http://titan.picoctf.net:57038/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> The name of the challenge gives a hint of using Burp suite </p>
+
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Burp suite</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>First Glance</strong>   You get a registration page you can fill with any data after intercepting it nothing was interesting.<img src="pics/intro1.png" alt="intro1.png">
+</li>
+</ol><ol>
+  <li><strong>The OTP page</strong>   After submitting the registration form you get a 2FA page requesting an OTP I tried some random values but nothing worked.<img src="pics/intro2.png" alt="intro2.png"> </li>
+  <li><strong>The finally</strong>   I thought that what happens if I removed the otp in  the request then here it is the flag <img src="pics/intro3.png" alt="intro3.png"> <hr> </li>
+</ol></div>
+
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>
