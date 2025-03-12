@@ -3,7 +3,6 @@ import sys
 import re
 import argparse
 import html
-import os
 
 def convert_markdown_to_html(markdown_text,filename=None):
     html_text = markdown_text

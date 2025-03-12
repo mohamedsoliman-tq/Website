@@ -3,7 +3,6 @@ import sys
 import re
 import argparse
 import html
-import os
 
 def convert_markdown_to_html(markdown_text,filename=None):
     html_text = markdown_text
@@ -141,7 +140,7 @@ def convert_markdown_to_html(markdown_text,filename=None):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
+    <title>Converted Markdown</title>
     <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
@@ -174,13 +173,7 @@ def main():
     args = parser.parse_args()
     
     markdown_text = args.input_file.read()
-    
-    # Get the filename if available
-    filename = None
-    if hasattr(args.input_file, 'name') and args.input_file.name != '<stdin>':
-        filename = os.path.basename(args.input_file.name)
-    
-    html_output = convert_markdown_to_html(markdown_text, filename)
+    html_output = convert_markdown_to_html(markdown_text)
     
     # Optional: Add navigation if requested
     if args.add_nav:
