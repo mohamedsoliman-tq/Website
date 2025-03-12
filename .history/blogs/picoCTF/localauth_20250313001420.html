@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converted Markdown</title>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap');
+
+    :root {
+        --primary-black: #000000;
+        --green-accent: #78BE20;
+        --dark-green: #5a9419;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+        background-color: var(--primary-black);
+        color: var(--green-accent);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+        border-bottom: 1px solid #001a00;
+    }
+
+    /* Navigation Styles */
+    nav {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        border-bottom: 2px solid var(--green-accent);
+        z-index: 100;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    nav a {
+        color: var(--green-accent);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s;
+    }
+
+    nav a:hover {
+        color: var(--dark-green);
+        text-shadow: 0 0 10px var(--green-accent);
+    }
+
+    /* Hero Section Styles */
+    .hero {
+        text-align: center;
+        padding: 4rem 0;
+        background: linear-gradient(45deg, var(--primary-black), #001100);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--green-accent);
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        text-shadow: 0 0 15px var(--green-accent);
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        color: var(--dark-green);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Code blocks */
+    pre {
+        background: #000a00;
+        padding: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid var(--green-accent);
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+
+    code {
+        font-family: monospace;
+        color: var(--green-accent);
+    }
+
+    /* List styling */
+    ul, ol {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-green);
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Links */
+    a {
+        color: var(--green-accent);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    a:hover {
+        color: var(--dark-green);
+        text-shadow: 0 0 10px var(--green-accent);
+    }
+
+    .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--green-accent);
+        text-decoration: none;
+        border: 1px solid var(--green-accent);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+        background-color: var(--green-accent);
+        color: var(--primary-black);
+        box-shadow: 0 0 10px var(--green-accent);
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        border: 1px solid var(--green-accent);
+        border-radius: 5px;
+        margin: 1rem 0;
+    }
+
+    /* Horizontal rule */
+    hr {
+        border: none;
+        height: 1px;
+        background-color: var(--green-accent);
+        margin: 2rem 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        .container {
+            padding: 1rem;
+        }
+        
+        .section {
+            padding: 2rem 0;
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--green-accent);
+    }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="local-authority---write-up"><h1>Local Authority - Write-Up</h1>
+
+<p><strong>Date:</strong> 12/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security</p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy</p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Can you get the flag?</p>
+<p>Go to this <a href="http://saturn.picoctf.net:58822/" class="read-more">website</a> and see what you can discover.*</p>
+
+<p>- <strong>Target:</strong> http://saturn.picoctf.net:58822/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> A simple login page let's see what does it hide</p>
+
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Burp Suite</p>
+<p>- Web Inspect</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Let's random data then see what we get</strong></li>
+</ol>
+   I tried <code>ssss, 1234</code> and got <code>Log In Failed</code><img src=""
+
+<ol>
+  <li><strong>Let's see the request in Burp Suite and learn how the credentials is dealt with</strong></li>
+</ol>
+   Intercept the request then pass it to the repeater. You can see one Java script file called <code>secure.js</code> 
+   ![[Pasted image 20250312225928.png]] 
+   and the script that checks the username and password and validates the credentials 
+   <pre><code>js     function filter(string) {
+        filterPassed = true;
+        for (let i =0; i < string.length; i++){
+          cc = string.charCodeAt(i);
+          
+<p>          if ( (cc >= 48 && cc <= 57) ||</p>
+<p>               (cc >= 65 && cc <= 90) ||</p>
+<p>               (cc >= 97 && cc <= 122) )</p>
+<p>          {</p>
+<p>            filterPassed = true;     </p>
+<p>          }</p>
+<p>          else</p>
+<p>          {</p>
+<p>            return false;</p>
+<p>          }</p>
+<p>        }</p>
+        
+<p>        return true;</p>
+<p>      }</p>
+    
+<p>      window.username = "ssss";</p>
+<p>      window.password = "1234";</p>
+      
+<p>      usernameFilterPassed = filter(window.username);</p>
+<p>      passwordFilterPassed = filter(window.password);</p>
+      
+<p>      if ( usernameFilterPassed && passwordFilterPassed ) {</p>
+      
+<p>        loggedIn = checkPassword(window.username, window.password);</p>
+        
+<p>        if(loggedIn)</p>
+<p>        {</p>
+<p>          document.getElementById('msg').innerHTML = "Log In Successful";</p>
+<p>          document.getElementById('adminFormHash').value = "2196812e91c29df34f5e217cfd639881";</p>
+<p>          document.getElementById('hiddenAdminForm').submit();</p>
+<p>        }</p>
+<p>        else</p>
+<p>        {</p>
+<p>          document.getElementById('msg').innerHTML = "Log In Failed";</p>
+<p>        }</p>
+<p>      }</p>
+<p>      else {</p>
+<p>        document.getElementById('msg').innerHTML = "Illegal character in username or password."</p>
+<p>      }</p>
+<p></code></pre></p>
+
+<ol>
+  <li><strong>Inspecting the code</strong></li>
+</ol>
+   By the credentials that I have submitted I got <code>Log In Failed</code> so the checkPassword function is what causes this but from where does this function come? let's check the <code>secure.js</code> file.
+<ol>
+  <li><strong>Inspecting the js file</strong></li>
+</ol>
+   First of all how could I see this file let's try to use the web inspect then see the sources tab that contain the files of the website. Here we go 
+   ![[Pasted image 20250312230932.png]]
+   Know let's try this 
+<ol>
+  <li><strong>Getting the flag</strong></li>
+</ol>
+   By submitting with the found credentials we get the flag.
+   ![[Pasted image 20250312231319.png]]
+
+<hr>
+</div>
+        <footer>
+        <p>© 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>
