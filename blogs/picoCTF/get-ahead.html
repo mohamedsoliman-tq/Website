@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Ahead</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="get-ahead---write-up"><h1>GET aHEAD - Write-Up</h1>
+
+<p><strong>Date:</strong> 13/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security  </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Find the flag being held on this server to get ahead of the competition <a href="http://mercury.picoctf.net:21939/" class="read-more">http://mercury.picoctf.net:21939/</a></p>
+
+<p>- <strong>Target:</strong> http://mercury.picoctf.net:21939/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> Seems like I would need burp suite to see request</p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Burp Suite</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Viewing the source code of the web page</strong>   I saw that if the http method is get the background color is red and if the http method post the color is blue. I noticed some thing interesting the name of the challenge is get aHEAD so let's try the HEAD method and see what happens. <img src="pics/Pasted image 20250313093651.png" alt="Pasted image 20250313093651.png"> Hope that you found this useful.
+</li>
+</ol><hr>
+
+</div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

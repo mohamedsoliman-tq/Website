@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dont Use Client Side</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="dont-use-client-side---write-up"><h1>dont-use-client-side - Write-Up</h1>
+
+<p><strong>Date:</strong> 13/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security  </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Can you break into this super secure portal? <code>https://jupiter.challenges.picoctf.org/problem/37821/</code> (<a href="https://jupiter.challenges.picoctf.org/problem/37821/" class="read-more">link</a>) or http://jupiter.challenges.picoctf.org:37821</p>
+
+
+<p>- <strong>Target:</strong> https://jupiter.challenges.picoctf.org/problem/37821/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> Seems like I will use Burp suite </p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Web inspect</p>
+<p>- Notepad</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Viewing the source code of the web page</strong>   I noticed a JS code that verify the password so there is no need for burp suite. let's see how the code works. </li>
+  <li><strong>Understanding the JS code</strong>  
+</li>
+</ol><pre><code>js
+function verify() {
+	checkpass = document.getElementById("pass").value;|
+	split = 4;
+	if (checkpass.substring(0, split) == 'pico') {
+		if (checkpass.substring(split<em>6, split</em>7) == 'a3c8') {
+			if (checkpass.substring(split, split*2) == 'CTF{') {
+				if (checkpass.substring(split<em>4, split</em>5) == 'ts_p') {
+					if (checkpass.substring(split<em>3, split</em>4) == 'lien') {
+						if (checkpass.substring(split<em>5, split</em>6) == 'lz_1') {
+							if (checkpass.substring(split<em>2, split</em>3) == 'no_c') {
+								if (checkpass.substring(split<em>7, split</em>8) == '9}') {
+									alert("Password Verified")}}}}}}}}
+else {
+	alert("Incorrect password");}}
+</code></pre>
+
+<p>It is a simple code that takes the password and check every part of it if it matches spliced part. After I rearranged the sliced parts I got this</p>
+
+<p>if (checkpass.substring(0, split) == '') {</p>
+<p>if (checkpass.substring(split, split*2) == '') {</p>
+<p>if (checkpass.substring(split<em>2, split</em>3) == '') {</p>
+<p>if (checkpass.substring(split<em>3, split</em>4) == '') {</p>
+<p>if (checkpass.substring(split<em>4, split</em>5) == '') {</p>
+<p>if (checkpass.substring(split<em>5, split</em>6) == '') {</p>
+<p>if (checkpass.substring(split<em>6, split</em>7) == '') {</p>
+<p>if (checkpass.substring(split<em>7, split</em>8) == '') {</p>
+
+<p>picoCTF{T4QI} </p>
+
+<hr>
+</div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>
