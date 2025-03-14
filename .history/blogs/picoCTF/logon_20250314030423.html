@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logon</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="12---logon---security-challenge-write-up"><h1>12 - logon - Security Challenge Write-Up</h1>
+
+<p><strong>Date:</strong> 14/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security  </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*The factory is hiding things from all of its users. Can you login as Joe and find what they've been looking at? <code>https://jupiter.challenges.picoctf.org/problem/44573/</code> (<a href="https://jupiter.challenges.picoctf.org/problem/44573/" class="read-more">link</a>) or http://jupiter.challenges.picoctf.org:44573</p>
+
+<p>- <strong>Target:</strong> https://jupiter.challenges.picoctf.org/problem/44573/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> Nothing interesting</p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Web Inspect</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Checking how is validation is done</strong>   it say to login as Joe but when trying to I got  <br><img src="pics/Pasted image 20250314021830.png" alt="Pasted image 20250314021830.png"><br then let's try random credentials and see what happens. I used <code>me</code> and <code>1234</code> and got  <img src="pics/Pasted image 20250314022019.png" alt="Pasted image 20250314022019.png"> Good a step forward. let's see the request on burp suite <img src="pics/Pasted image 20250314022203.png" alt="Pasted image 20250314022203.png"> the website sets a cookie of <code>admin=False</code> I think this is preventing me from getting the flag. </li>
+  <li><strong>Investigating the cookies</strong>   I tried setting the admin cookie in the request but didn't work. Then I tried the cookie editor extension but no cookies showed in it. So it's time to use the web inspect, I opened the application and here we go  <img src="pics/Pasted image 20250314022639.png" alt="Pasted image 20250314022639.png"> Then by editing the admin value to True we get the flag. <img src="pics/Pasted image 20250314022828.png" alt="Pasted image 20250314022828.png"> <hr> </li>
+</ol></div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

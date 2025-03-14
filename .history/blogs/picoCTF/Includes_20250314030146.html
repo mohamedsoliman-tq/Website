@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Includes</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="includes---write-up"><h1>Includes - Write-Up</h1>
+
+<p><strong>Date:</strong> 13/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*Can you get the flag?</p>
+<p>Go to this <a href="http://saturn.picoctf.net:57813/" class="read-more">website</a> and see what you can discover.</p>
+
+<p>- <strong>Target:</strong> http://saturn.picoctf.net:57813/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> Seems that we need to see the source code of the web page.</p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- Web Inspect</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><em></em>Inspecting the web page   There is a button that says <code>Say hello</code> that when clicked on an alert is displayed. <br<img src="pics/Pasted image 20250313074410.png" alt="Pasted image 20250313074410.png"> </li>
+  <li><strong>Inspecting the source code</strong>   By inspecting the sources tab we can see three files HTML, JS, CSS. <img src="pics/Pasted image 20250313074624.png" alt="Pasted image 20250313074624.png"> By viewing the contents of the JS and CSS files the flag first half is in the CSS file and the other half is in the JS file. <img src="pics/Pasted image 20250313074841.png" alt="Pasted image 20250313074841.png"> <img src="pics/Pasted image 20250313074918.png" alt="Pasted image 20250313074918.png"> <hr> </li>
+</ol></div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

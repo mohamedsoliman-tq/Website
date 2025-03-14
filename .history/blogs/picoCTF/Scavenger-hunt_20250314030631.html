@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Projects.html">Projects</a></li>
+            <li><a href="/Blogs.html">Blog</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+<div class="section" id="scavenger-hunt---write-up"><h1>Scavenger Hunt - Write-Up</h1>
+
+<p><strong>Date:</strong> 13/03/2025  </p>
+<p><strong>Challenge Category:</strong> #Web-Security  </p>
+<p>Platform: #picoCTF </p>
+<p><strong>Difficulty:</strong> #Easy </p>
+<p><strong>Status:</strong> #Solved </p>
+
+<hr>
+</div><div class="section" id="problem-description"><h2>Problem Description</h2>
+
+<p>*There is some interesting information hidden around this site <a href="http://mercury.picoctf.net:27393/" class="read-more">http://mercury.picoctf.net:27393/</a>. </p>
+<p>Can you find it?</p>
+
+<p>- <strong>Target:</strong> http://mercury.picoctf.net:27393/</p>
+<p>- <strong>Goal:</strong> extract a flag</p>
+<p>- <strong>Initial Observations:</strong> A simple page nothing interesting </p>
+<hr>
+
+</div><div class="section" id="tools-used"><h2>Tools Used</h2>
+
+<p>- web inspect</p>
+<p>- Google search</p>
+
+<hr>
+
+</div><div class="section" id="solution-steps"><h2>Solution Steps</h2>
+
+
+<ol>
+  <li><strong>Inspecting the source code</strong>   We can see the first part of the flag in the html. <br><img src="pics/Pasted image 20250313090041.png" alt="Pasted image 20250313090041.png"><br> Then let's see the JS file and the CSS file. Then the second part of flag is founded in the CSS file. <b<img src="pics/Pasted image 20250313090234.png" alt="Pasted image 20250313090234.png"> The JS file gives a hint about the place of the next part of the flag. <img src="pics/Pasted image 20250313090358.png" alt="Pasted image 20250313090358.png"> I searched google with the same question I found that this is regulated by the robots.txt file. So let's try /robots.txt. <img src="pics/Pasted image 20250313090614.png" alt="Pasted image 20250313090614.png"> oh here is the third part of the flag and there is another hint about the next part of the flag. let's search about the Apache server and how can it help. <a href="https://stackoverflow.com/questions/19322345/how-do-i-change-the-default-index-page-in-apache" class="read-more">How do I change the default index page in Apache?</a> I have found this article on stack overflow after searching <code>default apache files</code> so let's try /.htaccess <img src="pics/Pasted image 20250313091252.png" alt="Pasted image 20250313091252.png"> Another part of the flag and another hint let's search what does the mac OS help us with the challenge. I used chat-gpt and asked <code>what is special about mac os folders</code> and it responded with this <a href="https://chatgpt.com/share/67d2878a-9c2c-8005-a6ad-f2aa9325fae1" class="read-more">what is special about mac os folders</a> it said something interesting about a hidden folder called <code>.DS<em>Store</code> so let's try /.DS</em>Store <img src="pics/Pasted image 20250313092405.png" alt="Pasted image 20250313092405.png"> Finally last part of the flag. <hr> </li>
+</ol></div>
+<div class="section">
+            <a href="/blogs/picoCTF/picoCTF.html" class="read-more">← Back to All Challenges</a>
+        </div>
+        <footer>
+        <p>&copy; 2025 T4QI. All rights reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>
